@@ -6,6 +6,8 @@ The geek's home media streaming server.
 
 This is just the server, if you want a client you need to create or get one (I'll list them here when I create the first one, or someone does it). As described, this is the geek's home media streaming server, so the only thing that it does is get the video index from `videos.json` and send customized JSON for your client.
 
+Think of it as a middleware for your HTTP server to make streaming videos more customizable than just directory listings. **:)**
+
 ## Setup
 
 **stream.json** is really easy to setup (for a geek).
