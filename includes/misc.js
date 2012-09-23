@@ -52,5 +52,23 @@ module.exports = {
         callback(error, cached);
       });
     };
-  })()
+  })(),
+  getMIME: function(path, mimeTypes) {
+    var i = path.lastIndexOf('.');
+    var ext = (i < 0) ? '' : path.substr(i);
+    ext = ext.substring(1);
+
+    return mimeTypes[ext.toLowerCase()] || 'application/octet-stream';
+  },
+  generateVideoServerURL: function (callback, config) {
+    if (config.video_server.local == false) {
+      callback("http://" + config.video_server.ip + ":" + config.video_server.port + "/" + config.video_server.suffix);
+    } else if (config.video_server.local == true) {
+      this.getNetworkIPs(function(err, ip) {
+        callback("http://" + ip[0] + ":" + config.video_server.port + "/" + config.video_server.suffix);
+      }, false);
+    } else {
+      callback(null);
+    }
+  }
 };

@@ -37,7 +37,7 @@ app.use(function(req, res) {
         res.writeHead(404, "File Not Found");
         res.end();
       } else {
-        res.writeHead(200, "OK", {'Content-Type': getMIME(poster)});
+        res.writeHead(200, "OK", {'Content-Type': misc.getMIME(poster, mimeTypes)});
         fs.readFile(poster, function(error, content) {
           res.end(content);
         });
@@ -56,9 +56,9 @@ app.use(function(req, res) {
         res.end();
       } else {
         res.writeHead(200, "OK", {'Content-Type': "text/plain"});
-        generateVideoServerURL(function(videoServer) {
+        misc.generateVideoServerURL(function(videoServer) {
           res.end(videoServer + video, 'utf-8');
-        });
+        }, config);
       }
     } else {
       res.writeHead(403);
@@ -78,33 +78,3 @@ server.listen(config.server_port, function () {
     console.log("Server running at: " + server.address().address + ":" + server.address().port);
   }
 });
-
-function parseHTTPAuth(header) {
-  // header == req.headers
-  var auth_header = header["authorization"] || "";
-  var token = auth_header.split(/\s+/).pop() || "";
-  var auth = new Buffer(token, "base64").toString();
-  var parts = auth.split(/:/);
-
-  return { "username": parts[0], "password": parts[1] };
-}
-
-function getMIME(path) {
-  var i = path.lastIndexOf('.');
-  var ext = (i < 0) ? '' : path.substr(i);
-  ext = ext.substring(1);
-
-  return mimeTypes[ext.toLowerCase()] || 'application/octet-stream';
-}
-
-function generateVideoServerURL(callback) {
-  if (config.video_server.local == false) {
-    callback("http://" + config.video_server.ip + ":" + config.video_server.port + "/" + config.video_server.suffix);
-  } else if (config.video_server.local == true) {
-    misc.getNetworkIPs(function(err, ip) {
-      callback("http://" + ip[0] + ":" + config.video_server.port + "/" + config.video_server.suffix);
-    }, false);
-  } else {
-    callback(null);
-  }
-}
