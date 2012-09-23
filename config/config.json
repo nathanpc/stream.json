@@ -1,0 +1,19 @@
+{
+  "server_port": 4881,
+  "video_server": {
+    "local": true,
+    "ip": "",
+    "port": 80,
+    "suffix": "~Nathan/"
+  },
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "username": "nathanpc",
+      "password": "test"
+    }
+  ]
+}

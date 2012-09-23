@@ -1,0 +1,14 @@
+{
+  "video": [
+    {
+      "id": "Indie-Game",
+      "title": "Indie Game: The Movie",
+      "poster": "/Users/Nathan/Pictures/Movies/Indie-Game.jpg",
+      "location": "indiegamethemovie_1080p.mp4",
+      "description": {
+        "format": "plain",
+        "text": "With the twenty-first century comes a new breed of struggling independent artist: the indie game designer. Refusing to toil for major developers, these innovators independently conceive, design, and program their distinctly personal games in the hope that they, too, may find success.\n\nAfter two years of painstaking work, designer Edmund McMillen and programmer Tommy Refenes await the release of their first major game for Xbox, Super Meat Boy—the adventures of a skinless boy in search of his girlfriend, who is made of bandages. At PAX, a major video-game expo, developer Phil Fish unveils his highly anticipated, four-years-in-the-making FEZ. Jonathan Blow considers beginning a new game after creating Braid, one of the highest-rated games of all time.\n\nFirst-time filmmaking duo Lisanne Pajot and James Swirsky capture the emotional journey of these meticulously obsessive artists who devote their lives to their interactive art. Four developers, three games, and one ultimate goal— to express oneself through a video game."
+      }
+    }
+  ]
+}
