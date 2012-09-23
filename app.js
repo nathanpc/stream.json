@@ -47,7 +47,7 @@ app.use(function(req, res) {
 
       for (var i = 0; i < videos.video.length; i++) {
         if (videos.video[i].id == req_path[2]) {
-          video = videos.video[i].location;
+          video = videos.video[i].file;
         }
       }
 
