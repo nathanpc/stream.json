@@ -10,7 +10,7 @@ This is just the server, if you want a client you need to create or get one (I'l
 
 **stream.json** is really easy to setup (for a geek).
 
-- Create a file called `config.json` inside the `/config` folder. Here's an example (if you want to know more about the configurations file please read [Configuration-File]):
+- Create a file called `config.json` inside the `/config` folder. Here's an example (if you want to know more about the configurations file please read [[Configuration-File]]):
 
 ```
 {
