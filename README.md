@@ -35,7 +35,7 @@ Think of it as a middleware for your HTTP server to make streaming videos more c
 }
 ```
 
-- Create a file called `videos.json` in the same folder as `app.js`. This file will hold the index of movies/videos and their informations. Your `videos.json` file should look like this (if you want to know more about the video index file please read <<<**Link to the wiki here**>>>):
+- Create a file called `videos.json` in the same folder as `app.js`. This file will hold the index of movies/videos and their informations. Your `videos.json` file should look like this (if you want to know more about the video index file please read [Video-Index-File](https://github.com/nathanpc/stream.json/wiki/Video-Index-File)):
 
 ```
 {
