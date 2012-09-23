@@ -14,7 +14,7 @@ var misc = require(includes_dir + "/misc.js");
 var app = connect();
 var config_dir = "./config";
 var config = require(config_dir + "/config.json");
-var videos = require(config_dir + "/videos.json");
+var videos = require("./videos.json");
 var mimeTypes = require(config_dir + "/mimes.json");
 
 app.use(function(req, res) {
