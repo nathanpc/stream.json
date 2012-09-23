@@ -71,7 +71,6 @@ app.use(function(req, res) {
 });
 
 var server = http.createServer(app);
-// get the port from the config.json file
 server.listen(config.server_port, function () {
   if (server.address().address == "0.0.0.0") {
     console.log("Server running at: localhost:" + server.address().port);
