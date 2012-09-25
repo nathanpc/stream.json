@@ -5,7 +5,7 @@
 var connect = require("connect");
 var http = require("http");
 var fs = require("fs");
-var markdown = require("node-markdown").Markdown;
+var querystring = require('querystring');
 
 // Includes
 var includes_dir = "./includes";
@@ -75,6 +75,26 @@ app.use(function(req, res) {
       res.writeHead(403);
       res.end();
     }
+  } else if (req.method == "POST") {
+    var fullBody = "";
+
+		req.on('data', function(chunk) {
+			fullBody += chunk.toString();
+		});
+		
+		req.on('end', function() {
+		  if (req.url == "/add") {
+        db.add(querystring.parse(fullBody), videos, function(json) {
+          videos = json;
+          
+          res.writeHead(200, "OK", {'Content-Type': "text/plain"});
+          res.end(JSON.stringify(videos), 'utf-8');
+        });
+      } else {
+        res.writeHead(403);
+        res.end();
+      }
+		});
   } else {
     res.writeHead(403);
     res.end();

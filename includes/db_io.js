@@ -8,13 +8,33 @@ module.exports = {
     console.log("Watching for changes in videos.json");
 
     fs.watchFile("./videos.json", function(curr, prev) {
-      console.log("Changes!!!");
-
       fs.readFile("./videos.json", "utf-8", function (err, content) {
         if (err) throw err;
-        console.log(content);
         callback(content);
       });
+    });
+  },
+  add: function(data, file, callback) {
+    // TODO: Handle picture (poster) upload.
+    var tmp_json = {
+      "id": data.id,
+      "title": data.title,
+      "poster": data.poster,
+      "file": {
+        "remote": (data.file_remote == "true"),
+        "location": data.file_location
+      },
+      "description": {
+        "format": data.description_format,
+        "text": data.description
+      }
+    }
+    
+    file.video.unshift(tmp_json);
+    
+    fs.writeFile("./videos.json", JSON.stringify(file, null, 2), "utf-8", function (err) {
+      if (err) throw err;
+      callback(file);
     });
   }
 };
