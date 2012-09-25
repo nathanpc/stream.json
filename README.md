@@ -66,9 +66,7 @@ What I'm working on for the next releases:
  * Implement authentication (login/videos access)
  * Treat errors
  * Logging
- * A lot more...
-
-I'm going to publish my TODO list later. (it isn't big, but it's substantial)
+ * More?
 
 If you have a suggestion please open a Issue and I'll be pleased to implement it. Pull Requests are welcome too.
 
