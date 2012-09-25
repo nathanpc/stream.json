@@ -70,6 +70,8 @@ What I'm working on for the next releases:
 
 I'm going to publish my TODO list later. (it isn't big, but it's substantial)
 
+If you have a suggestion please open a Issue and I'll be pleased to implement it. Pull Requests are welcome too.
+
 ## License
 
 **stream.json** is licensed under GPLv3, which means I'll love your Feedback/Pull Requests. **:)**
