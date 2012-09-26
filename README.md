@@ -43,7 +43,10 @@ Think of it as a middleware for your HTTP server to make streaming videos more c
     {
       "id": "Unique-ID-Here",
       "title": "Awesome Movie Title Here",
-      "poster": "/path/to/your/poster/LikeThis.jpg",
+      "poster": {
+        "remote": false,
+        "location": "/path/to/your/poster/LikeThis.jpg"
+      },
       "file": {
         "remote": false,
         "location": "some_movie_name.mp4"
