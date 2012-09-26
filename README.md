@@ -8,6 +8,16 @@ This is just the server, if you want a client you need to create or get one (I'l
 
 Think of it as a middleware for your HTTP server to make streaming videos more customizable than just directory listings. **:)**
 
+## Clients
+
+This is just a server so if you really want to have a great time with it I recommend you to check out these clients:
+
+- [stream_json.php](http://nathanpc.github.com/stream_json.php/)
+
+I'm going to develop clients for all major mobile platforms (iOS, Android, and BlackBerry), also I'll try to learn more about GTK+ (with Python) programming to create a Linux client.
+
+If you want to develop a client don't forget to check [API Documentation](https://github.com/nathanpc/stream.json/wiki/API-Documentation).
+
 ## Setup
 
 **stream.json** is really easy to setup (for a geek).
@@ -62,6 +72,12 @@ Think of it as a middleware for your HTTP server to make streaming videos more c
 
 - You should have a HTTP server running in order to stream the videos (defined at `config.json`).
 
+- To start **stream.json** just run:
+
+```
+$ nohup node app.js > output.log &
+```
+
 ## TODO
 
 What I'm working on for the next releases:
@@ -72,6 +88,21 @@ What I'm working on for the next releases:
  * More?
 
 If you have a suggestion please open a Issue and I'll be pleased to implement it. Pull Requests are welcome too.
+
+## Contact
+
+I really appreciate people that stop to say "Thank You" to a developer. Also love to receive all kinds of feedback.
+
+- [about.me](http://about.me/nathanpc)
+- [Twitter](http://twitter.com/nathanpc)
+- [Google+](https://plus.google.com/112969911133615369021)
+- nathanpc [at] dreamintech [dot] net
+
+If you really appreciated my work and want to donate, please send me an email and I'll give you a PayPal donation link.
+
+## Changelog
+
+- **v0.1:** First version (alpha)
 
 ## License
 
