@@ -8,6 +8,8 @@ module.exports = {
     console.log("Watching for changes in videos.json");
 
     fs.watchFile("./videos.json", function(curr, prev) {
+      console.log("Changes were made to videos.json");
+
       fs.readFile("./videos.json", "utf-8", function (err, content) {
         if (err) throw err;
         callback(content);
@@ -33,7 +35,8 @@ module.exports = {
       }
     };
     
-    //console.log(JSON.stringify(tmp_json));
+    console.log("New video added: ");
+    console.log(tmp_json);
     
     file.video.unshift(tmp_json);
     

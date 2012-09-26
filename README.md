@@ -68,7 +68,7 @@ What I'm working on for the next releases:
 
  * Implement authentication (login/videos access)
  * Treat errors
- * Logging
+ * Improve logging
  * More?
 
 If you have a suggestion please open a Issue and I'll be pleased to implement it. Pull Requests are welcome too.
