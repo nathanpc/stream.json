@@ -41,6 +41,16 @@
 
 <p>Think of it as a middleware for your HTTP server to make streaming videos more customizable than just directory listings. <strong>:)</strong></p>
 
+<h2>Clients</h2>
+
+<p>This is just a server so if you really want to have a great time with it I recommend you to check out these clients:</p>
+
+<ul>
+<li><a href="http://nathanpc.github.com/stream_json.php/">stream_json.php</a></li>
+</ul><p>I'm going to develop clients for all major mobile platforms (iOS, Android, and BlackBerry), also I'll try to learn more about GTK+ (with Python) programming to create a Linux client.</p>
+
+<p>If you want to develop a client don't forget to check <a href="https://github.com/nathanpc/stream.json/wiki/API-Documentation">API Documentation</a>.</p>
+
 <h2>Setup</h2>
 
 <p><strong>stream.json</strong> is really easy to setup (for a geek).</p>
@@ -74,7 +84,10 @@
     {
       "id": "Unique-ID-Here",
       "title": "Awesome Movie Title Here",
-      "poster": "/path/to/your/poster/LikeThis.jpg",
+      "poster": {
+        "remote": false,
+        "location": "/path/to/your/poster/LikeThis.jpg"
+      },
       "file": {
         "remote": false,
         "location": "some_movie_name.mp4"
@@ -89,19 +102,39 @@
 </code></pre>
 
 <ul>
-<li>You should have a HTTP server running in order to stream the videos (defined at <code>config.json</code>).</li>
-</ul><h2>TODO</h2>
+<li><p>You should have a HTTP server running in order to stream the videos (defined at <code>config.json</code>).</p></li>
+<li><p>To start <strong>stream.json</strong> just run:</p></li>
+</ul><pre><code>$ nohup node app.js &gt; output.log &amp;
+</code></pre>
+
+<h2>TODO</h2>
 
 <p>What I'm working on for the next releases:</p>
 
 <ul>
 <li>Implement authentication (login/videos access)</li>
 <li>Treat errors</li>
-<li>Logging</li>
+<li>Improve logging</li>
 <li>More?</li>
 </ul><p>If you have a suggestion please open a Issue and I'll be pleased to implement it. Pull Requests are welcome too.</p>
 
-<h2>License</h2>
+<h2>Contact</h2>
+
+<p>I really appreciate people that stop to say "Thank You" to a developer. Also love to receive all kinds of feedback.</p>
+
+<ul>
+<li><a href="http://about.me/nathanpc">about.me</a></li>
+<li><a href="http://twitter.com/nathanpc">Twitter</a></li>
+<li><a href="https://plus.google.com/112969911133615369021">Google+</a></li>
+<li>nathanpc [at] dreamintech [dot] net</li>
+</ul><p>If you really appreciated my work and want to donate, please send me an email and I'll give you a PayPal donation link.</p>
+
+<h2>Changelog</h2>
+
+<ul>
+<li>
+<strong>v0.1:</strong> First version (alpha)</li>
+</ul><h2>License</h2>
 
 <p><strong>stream.json</strong> is licensed under GPLv3, which means I'll love your Feedback/Pull Requests. <strong>:)</strong></p>
 
