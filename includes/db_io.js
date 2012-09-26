@@ -19,7 +19,10 @@ module.exports = {
     var tmp_json = {
       "id": data.id,
       "title": data.title,
-      "poster": data.poster,
+      "poster": {
+        "remote": data.poster_remote,
+        "location": data.poster_location
+      },
       "file": {
         "remote": (data.file_remote == "true"),
         "location": data.file_location
@@ -28,7 +31,7 @@ module.exports = {
         "format": data.description_format,
         "text": data.description
       }
-    }
+    };
     
     //console.log(JSON.stringify(tmp_json));
     

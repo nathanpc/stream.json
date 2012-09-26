@@ -36,11 +36,13 @@ app.use(function(req, res) {
       res.writeHead(200, "OK", {'Content-Type': "application/json"});
 			res.end(JSON.stringify(tmp_json), 'utf-8');
     } else if (req_path[1] == "getPoster") {
+      var isRemote;
       var poster;
 
       for (var i = 0; i < videos.video.length; i++) {
         if (videos.video[i].id == req_path[2]) {
-          poster = videos.video[i].poster;
+          isRemote = videos.video[i].poster.remote;
+          poster = videos.video[i].poster.location;
         }
       }
 
@@ -49,9 +51,26 @@ app.use(function(req, res) {
         res.end();
       } else {
         res.writeHead(200, "OK", {'Content-Type': misc.getMIME(poster, mimeTypes)});
-        fs.readFile(poster, function(error, content) {
-          res.end(content);
-        });
+        
+        if (isRemote) {
+          http.get(poster, function(img_bin) {
+            var data = new Buffer(parseInt(img_bin.headers["content-length"], 10));
+            var pos = 0;
+            
+            img_bin.on("data", function(chunk) {
+              chunk.copy(data, pos);
+              pos += chunk.length;
+            });
+
+            img_bin.on("end", function() {
+              res.end(data);
+            });
+          });
+        } else {
+          fs.readFile(poster, function(error, content) {
+            res.end(content);
+          });
+        }
       }
     } else if (req_path[1] == "getVideo") {
       var isRemote;
