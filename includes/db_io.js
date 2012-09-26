@@ -30,6 +30,8 @@ module.exports = {
       }
     }
     
+    //console.log(JSON.stringify(tmp_json));
+    
     file.video.unshift(tmp_json);
     
     fs.writeFile("./videos.json", JSON.stringify(file, null, 2), "utf-8", function (err) {

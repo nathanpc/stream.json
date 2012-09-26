@@ -54,10 +54,12 @@ app.use(function(req, res) {
         });
       }
     } else if (req_path[1] == "getVideo") {
+      var isRemote;
       var video;
 
       for (var i = 0; i < videos.video.length; i++) {
         if (videos.video[i].id == req_path[2]) {
+          isRemote = videos.video[i].file.remote;
           video = videos.video[i].file.location;
         }
       }
@@ -67,9 +69,14 @@ app.use(function(req, res) {
         res.end();
       } else {
         res.writeHead(200, "OK", {'Content-Type': "text/plain"});
-        misc.generateVideoServerURL(function(videoServer) {
-          res.end(videoServer + video, 'utf-8');
-        }, config);
+        
+        if (isRemote) {
+          res.end(video, 'utf-8');
+        } else {
+          misc.generateVideoServerURL(function(videoServer) {
+            res.end(videoServer + video, 'utf-8');
+          }, config);
+        }
       }
     } else {
       res.writeHead(403);
@@ -87,7 +94,7 @@ app.use(function(req, res) {
         db.add(querystring.parse(fullBody), videos, function(json) {
           videos = json;
           
-          res.writeHead(200, "OK", {'Content-Type': "text/plain"});
+          res.writeHead(200, "OK", {'Content-Type': "application/json"});
           res.end(JSON.stringify(videos), 'utf-8');
         });
       } else {
