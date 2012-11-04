@@ -12,7 +12,9 @@ Think of it as a middleware for your HTTP server to make streaming videos more c
 
 This is just a server so if you really want to have a great time with it I recommend you to check out these clients:
 
-- [stream_json.php](http://nathanpc.github.com/stream_json.php/)
+- [stream_json.php (Web)](http://nathanpc.github.com/stream_json.php/)
+- [stream.json for Android](https://github.com/nathanpc/stream.json-android)
+- [streamjson-cli (Linux and Mac)](https://github.com/nathanpc/streamjson-cli)
 
 I'm going to develop clients for all major mobile platforms (iOS, Android, and BlackBerry), also I'll try to learn more about GTK+ (with Python) programming to create a Linux client.
 
